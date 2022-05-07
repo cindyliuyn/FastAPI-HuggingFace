@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from transformers import pipeline
+import uvicorn
 from pydantic import BaseModel
 
 
@@ -27,3 +28,7 @@ def health():
 @app.post("/get-sentiment")
 def my_endpoint(request: PredictionRequest):
     return get_sentiment(request.query_string)
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='0.0.0.0')
