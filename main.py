@@ -7,7 +7,6 @@ sentiment_model = pipeline("sentiment-analysis")
 
 
 def get_sentiment(query_sentence):
-    # sentiment_query_sentence = get_random_comment(top_comments)
     sentiment = sentiment_model(query_sentence)
     print(f"Sentiment test: {query_sentence} == {sentiment}")
     return sentiment
